@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes Prediction System</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            text-align: center;
+        }
+
+        .container {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        button {
+            background: #4facfe;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0077cc;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 20px;
+            color: green;
+        }
+
+        .instructions {
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Diabetes Prediction System</h2>
+
+    <div class="instructions">
+        <b>Instructions:</b><br>
+        1. Enter all values correctly<br>
+        2. Do not leave any field empty<br>
+        3. Enter numbers only<br>
+        4. Example values are given below:<br><br>
+
+        Pregnancies (0–10)<br>
+        Glucose (70–180)<br>
+        Blood Pressure (60–120)<br>
+        Skin Thickness (10–50)<br>
+        Insulin (15–300)<br>
+        BMI (15–50)<br>
+        Diabetes Pedigree (0.1–2.5)<br>
+        Age (18–80)<br>
+    </div>
+
+    <form action="/predict" method="post">
+
+        <input type="text" name="a" placeholder="Pregnancies"><br>
+        <input type="text" name="b" placeholder="Glucose"><br>
+        <input type="text" name="c" placeholder="Blood Pressure"><br>
+        <input type="text" name="d" placeholder="Skin Thickness"><br>
+        <input type="text" name="e" placeholder="Insulin"><br>
+        <input type="text" name="f" placeholder="BMI"><br>
+        <input type="text" name="g" placeholder="Diabetes Pedigree"><br>
+        <input type="text" name="h" placeholder="Age"><br>
+
+        <button type="submit">Predict</button>
+
+    </form>
+
+    <div class="result">
+        {{ prediction_text }}
+    </div>
+
+</div>
+
+</body>
+</html>
